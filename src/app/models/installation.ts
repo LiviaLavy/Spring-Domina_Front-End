@@ -1,6 +1,6 @@
 import { Piece } from './piece';
 import { Programme } from './programme';
-import { Consommation, ConsommationChauffage, ConsommationElec } from './consommation';
+import { Consommation, ConsommationChauffage, ConsommationElec, ConsommationEau } from './consommation';
 
 export class Installation {
 
@@ -37,6 +37,14 @@ export class InstalVolet extends Installation {
 
     ouverture: number;
 
+
+}
+
+export class InstalChauffeEau extends Installation {
+
+    puissance: number;
+    consoElec: ConsommationElec;
+    consoEau: ConsommationEau;
 
 }
 
