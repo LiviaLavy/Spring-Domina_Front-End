@@ -1,7 +1,9 @@
 import { Piece } from './piece';
 import { Programme } from './programme';
 import { Consommation, ConsommationChauffage, ConsommationElec } from './consommation';
+
 export class Installation {
+
     id: number;
     type: string;
     dateAjout: string;
