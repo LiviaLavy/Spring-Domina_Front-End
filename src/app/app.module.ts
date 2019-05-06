@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
@@ -24,6 +24,7 @@ import { ListConsosComponent } from './components/list-consos/list-consos.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot ([
       {
         path: 'SpringDomina/accueil',
