@@ -9,11 +9,14 @@ const ADRESSE_SERVER = 'http://localhost:8080';
   providedIn: 'root'
 })
 export class PieceServiceService {
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   };
+
+
   constructor(private http: HttpClient) { }
   public getAllPieces(): Observable<any> {
     return this.http.get<Piece>(ADRESSE_SERVER + '/piece/all');

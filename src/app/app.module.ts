@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
@@ -11,21 +11,28 @@ import { ListInstalsComponent } from './components/list-instals/list-instals.com
 import { ListCapteursComponent } from './components/list-capteurs/list-capteurs.component';
 import { ListConsosComponent } from './components/list-consos/list-consos.component';
 
+import { DetailPieceComponent } from './components/detail-piece/detail-piece.component';
+import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piece.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     BottomPartComponent,
+
     ListPiecesComponent,
     ListInstalsComponent,
     ListCapteursComponent,
-    ListConsosComponent
+    ListConsosComponent,
+
+    DetailPieceComponent,
+    EditNewPieceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot ([
+    RouterModule.forRoot([
       {
         path: 'SpringDomina/accueil',
         component: AccueilComponent
@@ -45,6 +52,18 @@ import { ListConsosComponent } from './components/list-consos/list-consos.compon
       {
         path: 'SpringDomina/consommations',
         component: ListConsosComponent
+      },
+      {
+        path: 'SpringDomina/pieces/details/:idPiece',
+        component: DetailPieceComponent
+      },
+      {
+        path: 'SpringDomina/pieces/editnewpieces/:idPiece',
+        component: EditNewPieceComponent
+      },
+      {
+        path: 'SpringDomina/pieces/editnewpiece',
+        component: EditNewPieceComponent
       },
       {
         path: '',
