@@ -1,6 +1,7 @@
 import { Piece } from './piece';
 import { Installation } from './installation';
 export class Programme {
+
 idProg: number;
 nomProg: string;
 piece: Piece;
@@ -16,4 +17,5 @@ constructor(id: number, nom: string, p: Piece, instals: Installation[]) {
 public static progFromJSON(obj: any): Programme {
     return new Programme(obj.idProg, obj.nomProg, obj.piece, obj.installations);
 }
+
 }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccueilComponent } from './components/accueil/accueil.component';
@@ -16,6 +16,10 @@ import { ListInstalEclairageComponent } from './components/list-instal-eclairage
 import { ListInstalVMCComponent } from './components/list-instal-vmc/list-instal-vmc.component';
 import { ListInstalVoletComponent } from './components/list-instal-volet/list-instal-volet.component';
 import { EditInstalChauffageComponent } from './components/edit-instal-chauffage/edit-instal-chauffage.component';
+
+
+import { DetailPieceComponent } from './components/detail-piece/detail-piece.component';
+import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piece.component';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {TabViewModule} from '../../node_modules/primeng/tabview';
@@ -28,15 +32,22 @@ import { ButtonModule } from 'primeng/button';
 import { ListChauffagesSummaryComponent } from './components/list-chauffages-summary/list-chauffages-summary.component';
 import {FieldsetModule} from 'primeng/fieldset';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     BottomPartComponent,
+
+
     ListPiecesComponent,
     ListInstalsComponent,
     ListCapteursComponent,
     ListConsosComponent,
+
+    DetailPieceComponent,
+    EditNewPieceComponent,
     ListInstalChauffageComponent,
     ListInstalChauffeEauComponent,
     ListInstalEclairageComponent,
@@ -59,7 +70,7 @@ import {FieldsetModule} from 'primeng/fieldset';
     PanelModule,
     FieldsetModule,
     NgbModule.forRoot(),
-    RouterModule.forRoot ([
+    RouterModule.forRoot([
       {
         path: 'SpringDomina/accueil',
         component: AccueilComponent
@@ -81,6 +92,19 @@ import {FieldsetModule} from 'primeng/fieldset';
         component: ListConsosComponent
       },
       {
+        path: 'SpringDomina/pieces/details/:idPiece',
+        component: DetailPieceComponent
+      },
+      {
+        path: 'SpringDomina/pieces/editnewpieces/:idPiece',
+        component: EditNewPieceComponent
+      },
+      {
+        path: 'SpringDomina/pieces/editnewpiece',
+        component: EditNewPieceComponent
+      },
+      {
+
         path: 'SpringDomina/installations/Chauffages',
         component: ListInstalChauffageComponent
       },
