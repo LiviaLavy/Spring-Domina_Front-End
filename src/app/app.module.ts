@@ -17,6 +17,16 @@ import { ListInstalVMCComponent } from './components/list-instal-vmc/list-instal
 import { ListInstalVoletComponent } from './components/list-instal-volet/list-instal-volet.component';
 import { EditInstalChauffageComponent } from './components/edit-instal-chauffage/edit-instal-chauffage.component';
 import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {TabViewModule} from '../../node_modules/primeng/tabview';
+import {ToastModule} from '../../node_modules/primeng/toast';
+import {SplitButtonModule} from '../../node_modules/primeng/splitbutton';
+import {PanelModule} from '../../node_modules/primeng/panel';
+import {CodeHighlighterModule} from '../../node_modules/primeng/components/codehighlighter/codehighlighter';
+import {CardModule} from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { ListChauffagesSummaryComponent } from './components/list-chauffages-summary/list-chauffages-summary.component';
+import {FieldsetModule} from 'primeng/fieldset';
 
 @NgModule({
   declarations: [
@@ -32,12 +42,22 @@ import { HttpClientModule } from '@angular/common/http';
     ListInstalEclairageComponent,
     ListInstalVMCComponent,
     ListInstalVoletComponent,
-    EditInstalChauffageComponent
+    EditInstalChauffageComponent,
+    ListChauffagesSummaryComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    SplitButtonModule,
+    CodeHighlighterModule,
+    ToastModule,
+    TabViewModule,
+    CardModule,
+    ButtonModule,
+    PanelModule,
+    FieldsetModule,
     NgbModule.forRoot(),
     RouterModule.forRoot ([
       {

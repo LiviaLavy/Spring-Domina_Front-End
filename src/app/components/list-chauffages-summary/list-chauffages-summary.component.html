@@ -1,0 +1,41 @@
+<p-panel>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">{{ instalChauffage.id }</span>
+            <button pButton style = "float: right" label="Edit" icon="pi pi-check" (click)="userClicked()" ></button>
+        </div>
+    </p-header>
+    <p-fieldset legend="Date d'ajout">
+        {{ instalChauffage.dateAjout }}
+    </p-fieldset>
+
+    <p-fieldset legend="Etat">
+        {{ instalChauffage.etat }}
+    </p-fieldset>
+
+    <p-fieldset legend="Localisation">
+        {{ instalChauffage.piece }}
+    </p-fieldset>
+
+    <p-fieldset legend="Puissance">
+        {{ instalChauffage.puissance }}
+    </p-fieldset>
+    
+    <p-fieldset legend="Programmes associés" [toggleable]="true">
+        <ul>
+            <li *ngFor="let programme of instalChauffage.programmes">
+                {{ programme.nomProg }}   {{ programme.id }} 
+                {{ programme.piece }}
+            </li>
+          </ul>
+    </p-fieldset>   
+
+    <p-fieldset legend="Consommations" [toggleable]="true">
+        {{ instalChauffage.consoChauffage }}
+     </p-fieldset>  
+
+    <p-footer>
+        <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success"></button>
+        <button pButton type="button" label="Delete" icon="pi pi-times" class="ui-button-secondary"></button>
+    </p-footer>
+</p-panel>

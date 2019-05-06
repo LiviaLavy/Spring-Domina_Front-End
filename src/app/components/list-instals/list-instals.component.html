@@ -1,9 +1,70 @@
-<p>
-  list-instals works!
-</p>
+<div class="p-grid" style="margin-top: .5em">
+  <div class="p-col">
+    <p-card header="Chauffages" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+      <div style="width: 360px; height: 350px; text-align: center"><p-header>
+          <img src="Card" src="assets/logo-chauffage.png" style="width: 300px; height: 300px;">
+      </p-header>
+    </div>
+      <p-footer>
+          <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-info" style="margin-right: .25em" (click)="addInstalChauffagesClicked()"></button>
+          <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success" (click)="listInstalChauffagesClicked()"></button>
+      </p-footer>
+     </p-card> 
+  </div>
+  <div class="p-col">
+    <p-card header="Eclairages" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+        <div style="width: 360px; height: 350px; text-align: center"><p-header>
+          <img src="Card" src="assets/lamp.png" style="width: 350px; height: 350px;">
+      </p-header>
+    </div>
+      <p-footer>
+          <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-info" style="margin-right: .25em" ></button>
+          <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success" (click)="listInstalChauffagesClicked()"></button>
+      </p-footer>
+     </p-card> 
+  </div>
+  <div class="p-col">
+    <p-card header="Chauffe-Eau" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+        <div style="width: 360px; height: 350px; text-align: center"><p-header>
+          <img src="Card" src="assets/chauffage.png" style="width: 250px; height: 300px;">
+      </p-header>
+    </div>
+      <p-footer>
+          <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-info" style="margin-right: .25em" ></button>
+          <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success" (click)="listInstalChauffagesClicked()"></button>
+      </p-footer>
+     </p-card> 
+  </div>
+  <div class="p-col">
+    <p-card header="VMCs" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+        <div style="width: 360px; height: 350px; text-align: center"><p-header>
+          <img src="Card" src="assets/whole-house-ventilation-icon-.png" style="width: 250px; height: 300px;">
+      </p-header>
+    </div>
+      <p-footer>
+          <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-info" style="margin-right: .25em"></button>
+          <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success" (click)="listInstalChauffagesClicked()"></button>
+      </p-footer>
+     </p-card> 
+  </div>
+  <div class="p-col">
+    <p-card header="Volets" subheader="Subheader" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+        <div style="width: 360px; height: 350px; text-align: center"><p-header>
+          <img src="Card" src="assets/shutters.png" style="width: 250px; height: 300px;">
+      </p-header>
+    </div>
+      <p-footer>
+          <button pButton type="button" icon="pi pi-plus" label="New" class="ui-button-info" style="margin-right: .25em"></button>
+          <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success"  (click)="listInstalChauffagesClicked()"></button>
+      </p-footer>
+     </p-card> 
+  </div>
+</div>
 
 
 
+
+ 
 <div>
   <app-bottom-part></app-bottom-part>
   </div>
