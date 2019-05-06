@@ -29,8 +29,8 @@ import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piec
     AppComponent,
     AccueilComponent,
     BottomPartComponent,
-
-
+    EditNewPieceComponent,
+    DetailPieceComponent,
     ListPiecesComponent,
     ListInstalsComponent,
     ListCapteursComponent,
