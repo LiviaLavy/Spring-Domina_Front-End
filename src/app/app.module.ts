@@ -16,7 +16,7 @@ import { ListInstalEclairageComponent } from './components/list-instal-eclairage
 import { ListInstalVMCComponent } from './components/list-instal-vmc/list-instal-vmc.component';
 import { ListInstalVoletComponent } from './components/list-instal-volet/list-instal-volet.component';
 import { EditInstalChauffageComponent } from './components/edit-instal-chauffage/edit-instal-chauffage.component';
-import { HttpClientModule } from '@angular/common/http';
+
 
 import { DetailPieceComponent } from './components/detail-piece/detail-piece.component';
 import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piece.component';
@@ -35,6 +35,9 @@ import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piec
     ListInstalsComponent,
     ListCapteursComponent,
     ListConsosComponent,
+
+    DetailPieceComponent,
+    EditNewPieceComponent,
     ListInstalChauffageComponent,
     ListInstalChauffeEauComponent,
     ListInstalEclairageComponent,
@@ -82,6 +85,7 @@ import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piec
         component: EditNewPieceComponent
       },
       {
+
         path: 'SpringDomina/installations/Chauffages',
         component: ListInstalChauffageComponent
       },
