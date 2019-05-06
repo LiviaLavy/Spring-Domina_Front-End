@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Piece } from '../../models/piece';
 
 @Component({
   selector: 'app-edit-new-piece',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-new-piece.component.css']
 })
 export class EditNewPieceComponent implements OnInit {
-
+  modeAccess: string;
+  pieceInProgress: Piece;
   constructor() { }
 
   ngOnInit() {

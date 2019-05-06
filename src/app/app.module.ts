@@ -13,12 +13,16 @@ import { ListConsosComponent } from './components/list-consos/list-consos.compon
 
 import { DetailPieceComponent } from './components/detail-piece/detail-piece.component';
 import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piece.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     BottomPartComponent,
+
 
     ListPiecesComponent,
     ListInstalsComponent,
@@ -30,6 +34,7 @@ import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piec
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
