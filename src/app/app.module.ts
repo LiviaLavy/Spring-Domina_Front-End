@@ -20,6 +20,7 @@ import { EditInstalChauffageComponent } from './components/edit-instal-chauffage
 
 import { DetailPieceComponent } from './components/detail-piece/detail-piece.component';
 import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piece.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -49,7 +50,6 @@ import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piec
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    HttpClientModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {

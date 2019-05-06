@@ -27,20 +27,20 @@ export class DetailPieceComponent implements OnInit {
     return null;
   }
 
-  goBackButtonPressed(): void {
+  public goBackButtonPressed(): void {
     this.location.back();
   }
 
-  editButtonPressed(): void {
+  public editButtonPressed(): void {
     this.router.navigateByUrl('SpringDomina/pieces/editnewpiece/' + this.piece.idPiece);
   }
-  deleteButtonPressed(): void {
+  public deleteButtonPressed(): void {
     this.pieceService.deletePiece(this.piece).subscribe((response) => {
     this.router.navigateByUrl('SpringDomina/pieces');
     });
   }
 
-  getPieceByID(idPiece: number): void {
+  public getPieceByID(idPiece: number): void {
     this.pieceService.getPieceById(idPiece).subscribe((response) => {
       this.piece = response;
     });
