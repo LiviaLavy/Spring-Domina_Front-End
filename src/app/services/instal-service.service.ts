@@ -57,19 +57,16 @@ export class InstalServiceService {
   public getInstallationChauffageByID(id: number): Observable<any> {
     return this.http.get<InstalChauffage>(ADRESSE_SERVER + '/instal/Chauffage/ID/' + id);
   }
-  public getInstallationChauffageByEtat(etat: string): Observable<any> {
+  public getInstallationChauffageByEtat(etat: boolean): Observable<any> {
     return this.http.get<InstalChauffage>(ADRESSE_SERVER + '/instal/Chauffage/etat/' + etat);
   }
-  public getInstallationChauffageByPiece(idpiece: string): Observable<any> {
+  public getInstallationChauffageByPiece(idpiece: number): Observable<any> {
     return this.http.get<InstalChauffage>(ADRESSE_SERVER + '/instal/Chauffage/piece/' + idpiece);
   }
-  public getInstallationChauffageByProgramme(idprog: string): Observable<any> {
+  public getInstallationChauffageByProgramme(idprog: number): Observable<any> {
     return this.http.get<InstalChauffage>(ADRESSE_SERVER + '/instal/Chauffage/IDProg/' + idprog);
   }
-  public putInstallationChauffageActive(installation: InstalChauffage): Observable<any> {
-    return this.http.put<InstalChauffage>(ADRESSE_SERVER + '/instal/Chauffage/actived/' + installation.id,
-      JSON.stringify(installation), this.httpOptions);
-  }
+
   public createInstallationChauffage(installation: InstalChauffage): Observable<any> {
     return this.http.post<InstalChauffage>(ADRESSE_SERVER + '/instal/Chauffage/add',
       JSON.stringify(installation), this.httpOptions);
