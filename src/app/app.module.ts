@@ -21,6 +21,11 @@ import { EditInstalChauffageComponent } from './components/edit-instal-chauffage
 import { DetailPieceComponent } from './components/detail-piece/detail-piece.component';
 import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piece.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SummaryPieceComponent } from './components/summary-piece/summary-piece.component';
+import { CommonModule } from '@angular/common';
+import { CardModule } from 'primeng/card';
+import { Button } from 'protractor';
+import { ButtonModule } from 'primeng/button';
 
 
 
@@ -44,9 +49,14 @@ import { HttpClientModule } from '@angular/common/http';
     ListInstalEclairageComponent,
     ListInstalVMCComponent,
     ListInstalVoletComponent,
-    EditInstalChauffageComponent
+    EditInstalChauffageComponent,
+    SummaryPieceComponent
   ],
   imports: [
+    CommonModule,
+    AppRoutingModule,
+    CardModule,
+    ButtonModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,

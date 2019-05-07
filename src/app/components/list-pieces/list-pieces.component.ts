@@ -13,6 +13,8 @@ export class ListPiecesComponent implements OnInit {
   pieces: Piece[];
   pieceInProgress: Piece;
   constructor(private router: Router, private pieceService: PieceServiceService) {
+    this.pieceInProgress = Piece.createBlank();
+    this.getAllPieces();
 
   }
 
