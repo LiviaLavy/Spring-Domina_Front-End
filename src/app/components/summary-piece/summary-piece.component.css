@@ -1,5 +1,16 @@
-#recipe {
-    position: center;
-    width: 100%; 
+
+div.image {
+    width: 150px;
+    height: 10%;
+}
+.recipe {
+    position: left;
+  
     margin: 10px 0;
+}
+@media (min-width: 400px) {
+    .recipe {
+        width: 400px;
+        margin: 10px auto;
+    }
 }
