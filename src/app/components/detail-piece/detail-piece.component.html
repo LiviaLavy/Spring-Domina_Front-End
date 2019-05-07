@@ -1,3 +1,40 @@
 <p>
-  detail-piece works!
+  <button pButton type="button" label="Retour" class="ui-button-raised ui-button-warning"
+    (click)="goBackButtonPressed()"></button>
 </p>
+<p>
+  <button pButton type="button" label="Modifier" class="ui-button-raised ui-button-info"
+    (click)="editButtonPressed()"></button>
+</p>
+<p>
+  <button pButton type="button" label="Suppression" class="ui-button-raised ui-button-danger"
+    (click)="deleteButtonPressed()"></button>
+</p>
+<div>
+  <p-fieldset legend="Nom de la Pièce">
+    <h2>{{ piece.nomPiece }}</h2>
+  </p-fieldset>
+  <p-fieldset>
+    <div class='cover-photo-holder'>
+      <img src="assets/{{ piece.nomPiece}}.jpg" />
+    </div>
+  </p-fieldset>
+  <p-fieldset legend="Superficie">
+    <h4>{{ piece.superficieM2 }} M²</h4>
+  </p-fieldset>
+  <p-fieldset legend="Installation" [toggleable]="true">
+    <ul>
+      <li *ngFor="let installation of piece.installations">
+        {{ installation.type }}; Etat : {{ installation.etat}}
+
+      </li>
+    </ul>
+  </p-fieldset>
+  <p-fieldset legend="Capteur" [toggleable]="true">
+
+  </p-fieldset>
+  <p-fieldset legend="Consommation">
+
+  </p-fieldset>
+
+</div>

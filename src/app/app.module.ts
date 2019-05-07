@@ -24,9 +24,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SummaryPieceComponent } from './components/summary-piece/summary-piece.component';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
-import { Button } from 'protractor';
 import { ButtonModule } from 'primeng/button';
-
+import {FieldsetModule} from 'primeng/fieldset';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -57,7 +57,9 @@ import { ButtonModule } from 'primeng/button';
     AppRoutingModule,
     CardModule,
     ButtonModule,
+    FieldsetModule,
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
     NgbModule.forRoot(),

@@ -33,6 +33,6 @@ export class ListPiecesComponent implements OnInit {
     this.router.navigateByUrl('SpringDomina/pieces/editnewpiece');
   }
   userClickedOnPiece(idPiece): void {
-    this.router.navigateByUrl('SpringDomina/pieces/' + idPiece);
+    this.router.navigateByUrl('SpringDomina/pieces/details/' + idPiece);
   }
 }
