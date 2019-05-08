@@ -3,6 +3,7 @@ import { Piece } from '../../models/piece';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { PieceServiceService } from '../../services/piece-service.service';
 import { Programme } from '../../models/programme';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-edit-new-piece',
@@ -12,7 +13,8 @@ import { Programme } from '../../models/programme';
 export class EditNewPieceComponent implements OnInit {
   modeAccess: string;
   pieceInProgress: Piece;
-  constructor(private router: Router, private route: ActivatedRoute, private pieceService: PieceServiceService) {
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, private route: ActivatedRoute, private location: Location, private pieceService: PieceServiceService) {
     this.pieceInProgress = Piece.createBlank();
   }
 
@@ -53,7 +55,7 @@ export class EditNewPieceComponent implements OnInit {
     }
   }
  public userClickedOnView(): void {
-    this.router.navigateByUrl('SpringDomina/installations/Chauffages');
+    this.router.navigateByUrl('SpringDomina/installations/Chauffagesb');
   }
 
   addInstallationPressed(): void {
@@ -71,5 +73,9 @@ export class EditNewPieceComponent implements OnInit {
   }
   removeInstallationAtIndex(index): void {
     this.pieceInProgress.installations.splice(index, 1);
+  }
+
+  public goBackButtonPressed(): void {
+    this.location.back();
   }
 }
