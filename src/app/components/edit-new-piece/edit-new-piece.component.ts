@@ -55,7 +55,7 @@ export class EditNewPieceComponent implements OnInit {
     }
   }
  public userClickedOnView(): void {
-    this.router.navigateByUrl('SpringDomina/installations/Chauffagesb');
+    this.router.navigateByUrl('SpringDomina/installations/Chauffages');
   }
 
   addInstallationPressed(): void {
