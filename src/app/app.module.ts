@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,8 +31,12 @@ import {CardModule} from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ListChauffagesSummaryComponent } from './components/list-chauffages-summary/list-chauffages-summary.component';
 import {FieldsetModule} from 'primeng/fieldset';
-
-
+import { ChauffageDetailsComponent } from './components/chauffage-details/chauffage-details.component';
+import {InputTextModule} from 'primeng/inputtext';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {ListboxModule} from 'primeng/listbox';
+import {SliderModule} from 'primeng/slider';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,8 @@ import {FieldsetModule} from 'primeng/fieldset';
     ListInstalVMCComponent,
     ListInstalVoletComponent,
     EditInstalChauffageComponent,
-    ListChauffagesSummaryComponent
+    ListChauffagesSummaryComponent,
+    ChauffageDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +74,11 @@ import {FieldsetModule} from 'primeng/fieldset';
     ButtonModule,
     PanelModule,
     FieldsetModule,
+    InputTextModule,
+    InputSwitchModule,
+    ListboxModule,
+    SliderModule,
+    FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -129,6 +139,14 @@ import {FieldsetModule} from 'primeng/fieldset';
         component: EditInstalChauffageComponent
       },
       {
+        path: 'SpringDomina/installations/Chauffages/edit/:id',
+        component: EditInstalChauffageComponent
+      },
+      {
+        path: 'SpringDomina/installations/Chauffages/:id',
+        component: ChauffageDetailsComponent
+      },
+      {
         path: '',
         redirectTo: '/SpringDomina/accueil',
         pathMatch: 'full'
@@ -136,6 +154,9 @@ import {FieldsetModule} from 'primeng/fieldset';
     ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    NO_ERRORS_SCHEMA
+  ]
 })
 export class AppModule { }

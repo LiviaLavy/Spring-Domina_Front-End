@@ -7,12 +7,32 @@ export class Consommation {
     instal: Installation;
     piece: Piece;
 
+    constructor(idConsommateur: number, fournisseur: string, type: string, instal: Installation, piece: Piece) {
+        this.idConsommateur = idConsommateur;
+        this.fournisseur = fournisseur;
+        this.type = type;
+        this.instal = instal;
+        this.piece = piece;
+    }
 }
 
 export class ConsommationChauffage extends Consommation {
-    ConsKWhJour: number;
-    ConsKWhMois: number;
-    ConsKWhAn: number;
+    consKWhJour: number;
+    consKWhMois: number;
+    consKWhAn: number;
+
+    constructor(idConsommateur: number, fournisseur: string, type: string, instal: Installation, piece: Piece,
+                consKWhJour: number, consKWhMois: number, consKWhAn: number) {
+        super(idConsommateur, fournisseur, type, instal, piece);
+        this.consKWhJour = consKWhJour;
+        this.consKWhMois = consKWhMois;
+        this.consKWhAn = consKWhAn;
+    }
+
+    public static consoChauffageFromJSON(obj: any): ConsommationChauffage {
+        return new ConsommationChauffage(obj.idConsommateur, obj.fournisseur, obj.type, obj.instal, obj.piece,
+            obj.consKWhJour, obj.onsKWhMois, obj.consKWhAn);
+    }
 }
 
 export class ConsommationEau extends Consommation {
