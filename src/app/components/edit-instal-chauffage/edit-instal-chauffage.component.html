@@ -1,3 +1,58 @@
-<p>
-  edit-instal-chauffage works!
-</p>
+<button pButton type="button" label="Retour" style="float: right" class="ui-button-warning" (click)="goBackButtonPressed()"></button>
+
+<p-panel>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Edition Chauffage</span>
+            
+        </div>
+    </p-header>
+  
+    <p-fieldset legend="Date d'ajout">
+
+        <span class="ui-float-label">
+            <input class="form-control" [(ngModel)]="instalChauffage_in_progress.dateAjout" id="float-input" type="text" size="30" pInputText> 
+            <label for="float-input">dd/mm/yyyy</label>
+        </span>
+
+    </p-fieldset>
+  
+    <p-fieldset legend="Etat d'activation">
+        <h3 class="first">{{instalChauffage_in_progress.etat}}</h3>
+<p-inputSwitch [(ngModel)]="instalChauffage_in_progress.etat" class="form-control" ></p-inputSwitch>
+    </p-fieldset>
+  
+    <p-fieldset legend="Localisation">
+        <span class="ui-float-label">
+            <input [(ngModel)]="instalChauffage_in_progress.piece" class="form-control" id="float-input" type="text" size="30" pInputText> 
+            <label for="float-input">Pièce</label>
+        </span>
+
+    </p-fieldset>
+  
+    <p-fieldset legend="Puissance">
+        <h3 class="first"> {{ instalChauffage_in_progress.puissance }} %</h3>
+        <p-slider [(ngModel)]="instalChauffage_in_progress.puissance" class="form-control" [style]="{'width':'14em'}"></p-slider>
+    </p-fieldset>
+  
+    <p-fieldset legend="Consommation">
+          
+      </p-fieldset>
+    
+    <p-fieldset legend="Programmes associés" [toggleable]="true">
+        
+    </p-fieldset>   
+  
+    <p-footer>
+        <button pButton type="button" label="Save" icon="pi pi-check" class="ui-button-success" (click)="addUpdateInstalChauffageClicked()"></button>
+    </p-footer>
+  
+  </p-panel>
+
+
+    
+
+  
+  
+    
+    

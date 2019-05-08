@@ -29,16 +29,14 @@ import { FormsModule } from '@angular/forms';
 import { SliderModule } from 'primeng/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabViewModule } from '../../node_modules/primeng/tabview';
-import { ToastModule } from '../../node_modules/primeng/toast';
-import { SplitButtonModule } from '../../node_modules/primeng/splitbutton';
 import { PanelModule } from '../../node_modules/primeng/panel';
-import { CodeHighlighterModule } from '../../node_modules/primeng/components/codehighlighter/codehighlighter';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ListChauffagesSummaryComponent } from './components/list-chauffages-summary/list-chauffages-summary.component';
-import { FieldsetModule } from 'primeng/fieldset';
-
-
+import {FieldsetModule} from 'primeng/fieldset';
+import { ChauffageDetailsComponent } from './components/chauffage-details/chauffage-details.component';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {ListboxModule} from 'primeng/listbox';
 
 @NgModule({
   declarations: [
@@ -51,7 +49,6 @@ import { FieldsetModule } from 'primeng/fieldset';
     ListInstalsComponent,
     ListCapteursComponent,
     ListConsosComponent,
-
     DetailPieceComponent,
     EditNewPieceComponent,
     ListInstalChauffageComponent,
@@ -60,6 +57,8 @@ import { FieldsetModule } from 'primeng/fieldset';
     ListInstalVMCComponent,
     ListInstalVoletComponent,
     EditInstalChauffageComponent,
+    ListChauffagesSummaryComponent,
+    ChauffageDetailsComponent,
     SummaryPieceComponent
 
   ],
@@ -70,12 +69,15 @@ import { FieldsetModule } from 'primeng/fieldset';
     ButtonModule,
     FieldsetModule,
     InputTextModule,
-    SliderModule,
+    InputSwitchModule,
+    ListboxModule,
     FormsModule,
+    SliderModule,
     BrowserModule,
+    PanelModule,
+    TabViewModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    AppRoutingModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -134,6 +136,14 @@ import { FieldsetModule } from 'primeng/fieldset';
       {
         path: 'SpringDomina/installations/Chauffages/edit',
         component: EditInstalChauffageComponent
+      },
+      {
+        path: 'SpringDomina/installations/Chauffages/edit/:id',
+        component: EditInstalChauffageComponent
+      },
+      {
+        path: 'SpringDomina/installations/Chauffages/:id',
+        component: ChauffageDetailsComponent
       },
       {
         path: '',

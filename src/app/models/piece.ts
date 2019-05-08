@@ -27,7 +27,7 @@ export class Piece {
     public static createBlank() {
         return new Piece(null, '', 1, [], [], [], null);
     }
-    public static recipeFromJSON(obj: any): Piece {
+    public static pieceFromJSON(obj: any): Piece {
         return new Piece(obj.idPiece, obj.nomPiece, obj.superficieM2,
             obj.programmes, obj.installations, obj.capteurs, obj.consommation);
 
