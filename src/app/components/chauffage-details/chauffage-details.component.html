@@ -9,7 +9,7 @@
   </p-header>
 
   <p-fieldset legend="Date d'ajout">
-        <h3 class="first">{{ instalChauffage_in_progress.dateAjout }}</h3>
+        <h5 class="first">{{ instalChauffage_in_progress.dateAjout }}</h5>
   </p-fieldset>
 
   <p-fieldset legend="Etat">
@@ -17,26 +17,26 @@
   </p-fieldset>
 
   <p-fieldset legend="Localisation">
-        <h3 class="first">{{ instalChauffage_in_progress.piece.nomPiece}}</h3>
+        <h5 class="first">{{ instalChauffage_in_progress.piece.nomPiece}}</h5>
   </p-fieldset>
 
   <p-fieldset legend="Puissance">
-        <h3 class="first"> {{ instalChauffage_in_progress.puissance }} %</h3>
+        <h5 class="first"> {{ instalChauffage_in_progress.puissance }} %</h5>
         
   </p-fieldset>
 
   <p-fieldset legend="Consommation">
-        <h2>{{ instalChauffage_in_progress.consoChauffage.fournisseur }}</h2>
-        <h2>{{ instalChauffage_in_progress.consoChauffage.consKWhJour }}</h2>
-        <h2>{{ instalChauffage_in_progress.consoChauffage.consKWhMois }}</h2>
-        <h2>{{ instalChauffage_in_progress.consoChauffage.consKWhAn }}</h2>   
+        <h5>Fournisseur : {{ instalChauffage_in_progress.consoChauffage.fournisseur }}</h5>
+        <h5>{{ instalChauffage_in_progress.consoChauffage.consKWhJour }} KWh/jour</h5>
+        <h5>{{ instalChauffage_in_progress.consoChauffage.consKWhMois }} KWh/mois</h5>
+        <h5>{{ instalChauffage_in_progress.consoChauffage.consKWhAn }} KWh/an</h5>   
     </p-fieldset>
   
   <p-fieldset legend="Programmes associés" [toggleable]="true">
       <ul>
           <li *ngFor="let programme of instalChauffage_in_progress.programmes">
-              <p>{{ programme.nomProg }}   {{ programme.id }} </p>
-              <p> localisation : {{ programme.piece }}</p>
+              <p>ID : {{ programme.idProg }}, <b> {{ programme.nomProg }} </b></p>
+              <I> localisation : {{ programme.piece.nomPiece }}</I>
           </li>
         </ul>
   </p-fieldset>   

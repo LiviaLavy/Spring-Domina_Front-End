@@ -37,6 +37,9 @@ import {FieldsetModule} from 'primeng/fieldset';
 import { ChauffageDetailsComponent } from './components/chauffage-details/chauffage-details.component';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {ListboxModule} from 'primeng/listbox';
+import {DropdownModule} from 'primeng/dropdown';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {CheckboxModule} from 'primeng/checkbox';
 
 @NgModule({
   declarations: [
@@ -78,6 +81,9 @@ import {ListboxModule} from 'primeng/listbox';
     TabViewModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    DropdownModule,
+    MultiSelectModule,
+    CheckboxModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {

@@ -27,6 +27,10 @@ export class ProgrammeServiceService {
     return this.http.get<Programme>(ADRESSE_SERVER + '/prog/Nom/' + nom);
   }
 
+  public getProgrammesByPiece(idPiece: number): Observable<any> {
+    return this.http.get<Programme>(ADRESSE_SERVER + '/prog/piece/' + idPiece);
+  }
+
   public createProgramme(programme: Programme): Observable<any> {
     return this.http.post<Programme>(ADRESSE_SERVER + '/prog/addprog',
     JSON.stringify(programme), this.httpOptions);
