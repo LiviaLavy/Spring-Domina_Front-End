@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Piece } from '../../models/piece';
 import { Location } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { PieceServiceService } from '../../services/piece-service.service';
-
+import { FieldsetModule } from 'primeng/fieldset';
 
 @Component({
   selector: 'app-detail-piece',
@@ -27,20 +27,20 @@ export class DetailPieceComponent implements OnInit {
     return null;
   }
 
-  goBackButtonPressed(): void {
+  public goBackButtonPressed(): void {
     this.location.back();
   }
 
-  editButtonPressed(): void {
-    this.router.navigateByUrl('SpringDomina/pieces/editnewpiece/' + this.piece.idPiece);
+  public editButtonPressed(): void {
+    this.router.navigateByUrl('SpringDomina/pieces/editnewpieces/' + this.piece.idPiece);
   }
-  deleteButtonPressed(): void {
+  public deleteButtonPressed(): void {
     this.pieceService.deletePiece(this.piece).subscribe((response) => {
-    this.router.navigateByUrl('SpringDomina/pieces');
+      this.router.navigateByUrl('SpringDomina/pieces');
     });
   }
 
-  getPieceByID(idPiece: number): void {
+  public getPieceByID(idPiece: number): void {
     this.pieceService.getPieceById(idPiece).subscribe((response) => {
       this.piece = response;
     });
@@ -48,7 +48,12 @@ export class DetailPieceComponent implements OnInit {
 
 
 
-  ngOnInit() {
-  }
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params: ParamMap) => {
 
+      this.getPieceByID(parseInt(params.get('idPiece'), 10));
+      console.log(this.piece);
+    });
+
+  }
 }

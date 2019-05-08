@@ -1,0 +1,14 @@
+<div class='recipe panel panel-default'>
+  <p-card header="{{ piece.nomPiece}}" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-header class="image">
+      <img src="assets/{{ piece.nomPiece}}.jpg">
+    </p-header>
+    <div>
+      Superficie: {{piece.superficieM2}} m²
+    </div>
+    <p-footer>
+      <button pButton type="button" label="Voir" icon="pi pi-search" class="ui-button-success" (click)="userClicked()"></button>
+      <button pButton type="button" label="Suppression" icon="pi pi-times" class="ui-button-secondary"></button>
+    </p-footer>
+  </p-card>
+</div>

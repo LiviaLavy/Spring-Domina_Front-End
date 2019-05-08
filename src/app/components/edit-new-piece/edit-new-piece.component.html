@@ -1,3 +1,40 @@
-<p>
-  edit-new-piece works!
-</p>
+<div class="p-grid">
+  <div class="p-col"><button pButton type="button" label="Retour" class="ui-button-raised ui-button-warning"
+      (click)="goBackButtonPressed()"></button></div>
+  <div class="p-col"><button pButton type="button" label="Modifier" class="ui-button-raised ui-button-info"
+      (click)="editButtonPressed()"></button></div>
+  <div class="p-col"><button pButton type="button" label="Suppression" class="ui-button-raised ui-button-danger"
+      (click)="deleteButtonPressed()"></button></div>
+</div>
+<div>
+  <p-fieldset>
+    <p-header> Pièce</p-header>
+    <span class="ui-float-label">
+      <input type="text" pInputText [(ngModel)]="pieceInProgress.nomPiece" />
+      <label for="float-input">Nom de la Piece</label>
+    </span>
+    <br>
+    <br>
+    <h6>Superficie: {{pieceInProgress.superficieM2}} m²</h6>
+    <input type="text" pInputText [(ngModel)]="pieceInProgress.superficieM2" style="width:14em" />
+    <p-slider [(ngModel)]="pieceInProgress.superficieM2" [style]="{'width':'14em'}"></p-slider>
+  </p-fieldset>
+
+</div>
+<div>
+  <p-fieldset>
+    <p-header> Installations de la pièce</p-header>
+    <div class="installation" *ngFor="let installation of pieceInProgress.installations, let i = index">
+      <input type="text" pInputText [(ngModel)]="pieceInProgress.installations[i].type" />
+      <br>
+      <input type="text" pInputText [(ngModel)]="pieceInProgress.installations[i].id" />
+      <button pButton type="button" label="Modifier" class="ui-button-raised ui-button-info"
+        (click)="userClickedOnView()"></button>
+    </div>
+
+  </p-fieldset>
+</div>
+
+<div class="input-group">
+  <input type="button" value="Ajouter la Pièce" (click)="addUpdateRecipeClicked()" />
+</div>

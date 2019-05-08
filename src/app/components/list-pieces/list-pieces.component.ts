@@ -13,6 +13,8 @@ export class ListPiecesComponent implements OnInit {
   pieces: Piece[];
   pieceInProgress: Piece;
   constructor(private router: Router, private pieceService: PieceServiceService) {
+    this.pieceInProgress = Piece.createBlank();
+    this.getAllPieces();
 
   }
 
@@ -31,6 +33,6 @@ export class ListPiecesComponent implements OnInit {
     this.router.navigateByUrl('SpringDomina/pieces/editnewpiece');
   }
   userClickedOnPiece(idPiece): void {
-    this.router.navigateByUrl('SpringDomina/pieces/' + idPiece);
+    this.router.navigateByUrl('SpringDomina/pieces/details/' + idPiece);
   }
 }

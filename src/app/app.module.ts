@@ -21,35 +21,34 @@ import { EditInstalChauffageComponent } from './components/edit-instal-chauffage
 import { DetailPieceComponent } from './components/detail-piece/detail-piece.component';
 import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piece.component';
 import { HttpClientModule } from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {TabViewModule} from '../../node_modules/primeng/tabview';
-import {ToastModule} from '../../node_modules/primeng/toast';
-import {SplitButtonModule} from '../../node_modules/primeng/splitbutton';
-import {PanelModule} from '../../node_modules/primeng/panel';
-import {CodeHighlighterModule} from '../../node_modules/primeng/components/codehighlighter/codehighlighter';
-import {CardModule} from 'primeng/card';
+import { SummaryPieceComponent } from './components/summary-piece/summary-piece.component';
+import { CommonModule } from '@angular/common';
+
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { SliderModule } from 'primeng/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TabViewModule } from '../../node_modules/primeng/tabview';
+import { PanelModule } from '../../node_modules/primeng/panel';
+import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ListChauffagesSummaryComponent } from './components/list-chauffages-summary/list-chauffages-summary.component';
 import {FieldsetModule} from 'primeng/fieldset';
 import { ChauffageDetailsComponent } from './components/chauffage-details/chauffage-details.component';
-import {InputTextModule} from 'primeng/inputtext';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {ListboxModule} from 'primeng/listbox';
-import {SliderModule} from 'primeng/slider';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccueilComponent,
     BottomPartComponent,
-
-
+    EditNewPieceComponent,
+    DetailPieceComponent,
     ListPiecesComponent,
     ListInstalsComponent,
     ListCapteursComponent,
     ListConsosComponent,
-
     DetailPieceComponent,
     EditNewPieceComponent,
     ListInstalChauffageComponent,
@@ -59,26 +58,26 @@ import { FormsModule } from '@angular/forms';
     ListInstalVoletComponent,
     EditInstalChauffageComponent,
     ListChauffagesSummaryComponent,
-    ChauffageDetailsComponent
+    ChauffageDetailsComponent,
+    SummaryPieceComponent
+
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
     AppRoutingModule,
-    HttpClientModule,
-    SplitButtonModule,
-    CodeHighlighterModule,
-    ToastModule,
-    TabViewModule,
     CardModule,
     ButtonModule,
-    PanelModule,
     FieldsetModule,
     InputTextModule,
     InputSwitchModule,
     ListboxModule,
-    SliderModule,
     FormsModule,
+    SliderModule,
+    BrowserModule,
+    PanelModule,
+    TabViewModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {

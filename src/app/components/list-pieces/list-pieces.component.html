@@ -1,7 +1,11 @@
-<p>
-  list-pieces works!
-</p>
+  <app-summary-piece *ngFor="let piece of pieces" [piece]="piece" (userClick)="userClickedOnPiece($event)">
 
-<div>
+  </app-summary-piece>
+
+
+
+  <div id="bottom"></div>
   <app-bottom-part></app-bottom-part>
-  </div>
+
+ 
+  
