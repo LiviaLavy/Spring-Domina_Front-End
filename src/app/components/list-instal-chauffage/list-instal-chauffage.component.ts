@@ -15,10 +15,15 @@ export class ListInstalChauffageComponent implements OnInit {
   instalChauffages: InstalChauffage[];
   instalChauffage: InstalChauffage;
 
-  ngOnInit(): void {
-    this.route.paramMap.subscribe((params: ParamMap) => {
-      this.getInstalChauffageById(parseInt(params.get('id'), 10));
+  ngOnInit(): InstalChauffage[] {
+    // this.route.paramMap.subscribe((params: ParamMap) => {
+    //   this.getInstalChauffageById(parseInt(params.get('id'), 10));
+    // });
+    this.instalService.getAllInstallationChauffage().subscribe((response) => {
+      console.log(response['_body'] );
+      this.instalChauffages = response;
     });
+    return this.instalChauffages;
   }
 
   findInstalChauffageById(id: number): InstalChauffage {
@@ -30,13 +35,7 @@ export class ListInstalChauffageComponent implements OnInit {
     return null;
   }
 
-  public getAllInstalChauffages(): void {
-    this.instalService.getAllInstallationChauffage().subscribe((response) => {
-      console.log(response['_body'] );
-      this.instalChauffages = response;
-      console.log(this.instalChauffages);
-    });
-  }
+
 
   public getInstalChauffageById(id: number): void {
     this.instalService.getInstallationChauffageByID(id).subscribe((response) => {

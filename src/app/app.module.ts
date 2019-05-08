@@ -23,13 +23,22 @@ import { EditNewPieceComponent } from './components/edit-new-piece/edit-new-piec
 import { HttpClientModule } from '@angular/common/http';
 import { SummaryPieceComponent } from './components/summary-piece/summary-piece.component';
 import { CommonModule } from '@angular/common';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import {FieldsetModule} from 'primeng/fieldset';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
-import {SliderModule} from 'primeng/slider';
+import { SliderModule } from 'primeng/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TabViewModule } from '../../node_modules/primeng/tabview';
+import { ToastModule } from '../../node_modules/primeng/toast';
+import { SplitButtonModule } from '../../node_modules/primeng/splitbutton';
+import { PanelModule } from '../../node_modules/primeng/panel';
+import { CodeHighlighterModule } from '../../node_modules/primeng/components/codehighlighter/codehighlighter';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { ListChauffagesSummaryComponent } from './components/list-chauffages-summary/list-chauffages-summary.component';
+import { FieldsetModule } from 'primeng/fieldset';
+
+
 
 @NgModule({
   declarations: [
@@ -52,6 +61,7 @@ import {SliderModule} from 'primeng/slider';
     ListInstalVoletComponent,
     EditInstalChauffageComponent,
     SummaryPieceComponent
+
   ],
   imports: [
     CommonModule,
