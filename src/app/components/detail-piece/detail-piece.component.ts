@@ -4,6 +4,8 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { PieceServiceService } from '../../services/piece-service.service';
 import { FieldsetModule } from 'primeng/fieldset';
+import { InstalServiceService } from '../../services/instal-service.service';
+import { Installation } from '../../models/installation';
 
 @Component({
   selector: 'app-detail-piece',
@@ -13,10 +15,12 @@ import { FieldsetModule } from 'primeng/fieldset';
 export class DetailPieceComponent implements OnInit {
   piece: Piece;
   pieces: Piece[];
+  instals: Installation[];
   constructor(private route: ActivatedRoute,
               private location: Location,
               private router: Router,
-              private pieceService: PieceServiceService) { }
+              private pieceService: PieceServiceService,
+              private instalService: InstalServiceService) { }
 
   findPieceById(idPiece: number): Piece {
     for (const piece of this.pieces) {
@@ -50,10 +54,16 @@ export class DetailPieceComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
+      this.pieceService.getPieceById(parseInt(params.get('idPiece'), 10)).subscribe(
+        (responses) => {
+          this.piece = responses;
+          console.log(this.piece);
+          this.instalService.getInstallationByPiece(parseInt(params.get('idPiece'), 10)).subscribe(
+            (responseb) => {
+              this.piece.installations = responseb;
+            });
+        });
 
-      this.getPieceByID(parseInt(params.get('idPiece'), 10));
-      console.log(this.piece);
     });
-
   }
 }

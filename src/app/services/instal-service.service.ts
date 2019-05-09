@@ -28,7 +28,7 @@ export class InstalServiceService {
   public getInstallationByEtat(etat: string): Observable<any> {
     return this.http.get<Installation>(ADRESSE_SERVER + '/instal/etat/' + etat);
   }
-  public getInstallationByPiece(idpiece: string): Observable<any> {
+  public getInstallationByPiece(idpiece: number): Observable<any> {
     return this.http.get<Installation>(ADRESSE_SERVER + '/instal/piece/' + idpiece);
   }
   public getInstallationByProgramme(idprog: string): Observable<any> {
