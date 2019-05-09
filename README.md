@@ -18,6 +18,7 @@ https://github.com/mgmtournie/Spring_domina
 
 ### Setting up
 To download the project, clone it from github using the next command:
+
 $ git clone https://github.com/LiviaLavy/Spring-Domina_Front-End.git
 
 ## Development server
