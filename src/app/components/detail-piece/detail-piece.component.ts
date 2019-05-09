@@ -4,7 +4,8 @@ import { Location } from '@angular/common';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { PieceServiceService } from '../../services/piece-service.service';
 import { FieldsetModule } from 'primeng/fieldset';
-import { InstalServiceService } from 'src/app/services/instal-service.service';
+import { InstalServiceService } from '../../services/instal-service.service';
+import { Installation } from '../../models/installation';
 
 @Component({
   selector: 'app-detail-piece',
@@ -14,6 +15,7 @@ import { InstalServiceService } from 'src/app/services/instal-service.service';
 export class DetailPieceComponent implements OnInit {
   piece: Piece;
   pieces: Piece[];
+  instals: Installation[] = [];
   constructor(private route: ActivatedRoute,
               private location: Location,
               private router: Router,
@@ -52,6 +54,15 @@ export class DetailPieceComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
+      this.pieceService.getPieceById(parseInt(params.get('idPiece'), 10)).subscribe(
+        (responses) => {
+          this.piece = responses;
+          console.log(this.piece);
+          this.instalService.getInstallationByPiece(parseInt(params.get('idPiece'), 10)).subscribe(
+            (responseb) => {
+              this.piece.installations = responseb;
+            });
+        });
 
       this.getPieceByID(parseInt(params.get('idPiece'), 10));
       console.log(this.piece);
@@ -62,6 +73,5 @@ export class DetailPieceComponent implements OnInit {
         }
       );
     });
-
   }
 }

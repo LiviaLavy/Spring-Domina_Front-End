@@ -24,12 +24,19 @@
 <div>
   <p-fieldset>
     <p-header> Installations de la pièce</p-header>
-    <p-dropdown [options]="instals" [(ngModel)]="pieceInProgress.installations" 
-      placeholder="Choisissez une installation" optionLabel="type" [showClear]="true"></p-dropdown>
-    <br>
+    <div class="installation" *ngFor="let ins of instalsID, let i = index">
+      <div class="ui-g" style="width:250px;margin-bottom:10px">
+        <div class="ui-g-12">
+          <p-checkbox name="installation" value={{instalsID[i]}} label={{instalsID[i]}} [(ngModel)]="selectedInstbyId"
+            inputId={{instalsID[i]}}></p-checkbox>
+        </div>
+
+      </div>
+    </div>
+
   </p-fieldset>
 </div>
 
 <div class="input-group">
-  <input type="button" value="Ajouter la Pièce" (click)="addUpdateRecipeClicked()" />
+  <input type="button" value="Ajouter la Pièce" (click)="addUpdatePieceClicked()" />
 </div>

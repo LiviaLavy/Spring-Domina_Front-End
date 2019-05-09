@@ -14,8 +14,8 @@ export class Piece {
     consommation: Consommation;
 
     constructor(id: number, n: string,
-                s: number, p: Programme[], i: Installation[],
-                ca: Capteur[], co: Consommation) {
+        s: number, p: Programme[], i: Installation[],
+        ca: Capteur[], co: Consommation) {
         this.idPiece = id;
         this.nomPiece = n;
         this.superficieM2 = s;
@@ -31,5 +31,16 @@ export class Piece {
         return new Piece(obj.idPiece, obj.nomPiece, obj.superficieM2,
             obj.programmes, obj.installations, obj.capteurs, obj.consommation);
 
+    }
+
+
+
+}
+export class PieceInstallationDto {
+    piece: Piece;
+    listInst: Installation[];
+    constructor(piece: Piece, instList: Installation[]) {
+        this.piece = piece;
+        this.listInst = instList;
     }
 }
