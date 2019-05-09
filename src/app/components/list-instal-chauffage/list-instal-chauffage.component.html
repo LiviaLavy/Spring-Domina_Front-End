@@ -3,3 +3,5 @@
 <app-list-chauffages-summary *ngFor="let instalChauffage of instalChauffages" [instalChauffage]="instalChauffage" (userClick)="userClickedOnView($event)"></app-list-chauffages-summary>
 
 <button pButton type="button" icon="pi pi-plus"  label="New" class="ui-button-info" style="left: 50%" (click)="addInstalChauffagesClicked()"></button>
+
+<app-bottom-part></app-bottom-part>
