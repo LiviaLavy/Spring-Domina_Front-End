@@ -1,5 +1,14 @@
-# Spring
+# Spring Domina
 
+This application offers a platform where the users can manage their energetic consumation and improve their comfort, by handling connected electric installations. Users can create progs of control, or directly command their installations throught an interactive interface.
+
+The application's features are:
+
+- Manage connected installations using electricity, in addition of thermic, humidity, luminosity and CO2 captors.
+- Create and use programs for installation control for each rooms of the house.
+- Consult energetic consumation of each installation, room, and the house in general.
+
+This repository contain the Frontend part of the application.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
