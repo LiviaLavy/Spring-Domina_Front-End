@@ -11,6 +11,10 @@ The application's features are:
 This repository contain the Frontend part of the application.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
+## Prerequisites
+To run this project you need the backend part of the application as requirement.
+https://github.com/mgmtournie/Spring_domina
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
