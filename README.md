@@ -11,12 +11,12 @@ The application's features are:
 This repository contain the Frontend part of the application.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-##Getting Started
+## Getting Started
 ### Prerequisites
 To run this project you need the backend part of the application as requirement.
 https://github.com/mgmtournie/Spring_domina
 
-###Setting up
+### Setting up
 To download the project, clone it from github using the next command:
 $ git clone https://github.com/LiviaLavy/Spring-Domina_Front-End.git
 
