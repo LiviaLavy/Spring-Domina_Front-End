@@ -40,6 +40,12 @@ import {ListboxModule} from 'primeng/listbox';
 import {DropdownModule} from 'primeng/dropdown';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {CheckboxModule} from 'primeng/checkbox';
+import { TopPartComponent } from './components/top-part/top-part.component';
+import {ToolbarModule} from 'primeng/toolbar';
+import {RatingModule} from 'primeng/rating';
+
+
+
 
 @NgModule({
   declarations: [
@@ -62,11 +68,13 @@ import {CheckboxModule} from 'primeng/checkbox';
     EditInstalChauffageComponent,
     ListChauffagesSummaryComponent,
     ChauffageDetailsComponent,
-    SummaryPieceComponent
+    SummaryPieceComponent,
+    TopPartComponent
 
   ],
   imports: [
     CommonModule,
+    ToolbarModule,
     AppRoutingModule,
     CardModule,
     ButtonModule,
@@ -84,6 +92,7 @@ import {CheckboxModule} from 'primeng/checkbox';
     DropdownModule,
     MultiSelectModule,
     CheckboxModule,
+    RatingModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {

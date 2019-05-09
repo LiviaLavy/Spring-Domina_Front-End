@@ -1,40 +1,32 @@
-<p>
-  accueil works!
-</p>
 
-
-  <ngb-carousel *ngIf="images">
+  <div style="position: absolute; left:25%; top: 25%;">
+  <ngb-carousel style="width: 1000px;">
     <ng-template ngbSlide>
-      <img [src]="images[0]" alt="Random first slide" (click)="listPiecesClicked()">
+      <img src="assets/Plan de maison.jpg" style="width: 1000px; height: 500px;" alt="Random first slide" (click)="listPiecesClicked()">
       <div class="carousel-caption">
-        <h3>First slide label</h3>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Mes Pièces</h3>
       </div>
     </ng-template>
     <ng-template ngbSlide>
-      <img [src]="images[1]" alt="Random second slide" (click)="listInstalsClicked()">
+      <img src="assets/instals.jpg" style="width: 1000px; height: 500px;" alt="Random second slide" (click)="listInstalsClicked()">
       <div class="carousel-caption">
-        <h3>Second slide label</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>Mes Installations</h3>
       </div>
     </ng-template>
     <ng-template ngbSlide>
-      <img [src]="images[2]" alt="Random third slide" (click)="listCapteursClicked()">
+      <img src="assets/thermometre.jpg" style="width: 1000px; height: 500px;" alt="Random third slide" (click)="listCapteursClicked()">
       <div class="carousel-caption">
-        <h3>Third slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3>Mes Capteurs</h3>
       </div>
     </ng-template>
     <ng-template ngbSlide>
-      <img [src]="images[3]" alt="Random fourth slide" (click)="listConsosClicked()">
+      <img src="assets/consos.jpg" style="width: 1000px; height: 500px;" alt="Random fourth slide" (click)="listConsosClicked()">
       <div class="carousel-caption">
-        <h3>4slide label</h3>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          <h3>Mes consommations</h3>
       </div>
     </ng-template>
   </ngb-carousel>
-
-
-<div>
+</div>
+<div style="position: absolute; bottom:1%; width: 100%">
 <app-bottom-part></app-bottom-part>
 </div>
