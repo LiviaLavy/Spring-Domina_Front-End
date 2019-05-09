@@ -47,6 +47,10 @@ import { ListProgsComponent } from './components/list-progs/list-progs.component
 import { EditInstalEclairageComponent } from './components/edit-instal-eclairage/edit-instal-eclairage.component';
 import { ListEclairagesSummaryComponent } from './components/list-eclairages-summary/list-eclairages-summary.component';
 import { EclairageDetailsComponent } from './components/eclairage-details/eclairage-details.component';
+import { ChauffeEauDetailsComponent } from './components/chauffe-eau-details/chauffe-eau-details.component';
+import { EditInstalChauffeEauComponent } from './components/edit-instal-chauffe-eau/edit-instal-chauffe-eau.component';
+import { ListChauffeEauSummaryComponent } from './components/list-chauffe-eau-summary/list-chauffe-eau-summary.component';
+import { VmcDetailsComponent } from './components/vmc-details/vmc-details.component';
 
 
 
@@ -77,7 +81,11 @@ import { EclairageDetailsComponent } from './components/eclairage-details/eclair
     ListProgsComponent,
     EditInstalEclairageComponent,
     ListEclairagesSummaryComponent,
-    EclairageDetailsComponent
+    EclairageDetailsComponent,
+    ChauffeEauDetailsComponent,
+    EditInstalChauffeEauComponent,
+    ListChauffeEauSummaryComponent,
+    VmcDetailsComponent
 
   ],
   imports: [
@@ -169,6 +177,10 @@ import { EclairageDetailsComponent } from './components/eclairage-details/eclair
         component: EditInstalEclairageComponent
       },
       {
+        path: 'SpringDomina/installations/ChauffeEau/edit',
+        component: EditInstalChauffeEauComponent
+      },
+      {
         path: 'SpringDomina/installations/Chauffages/edit/:id',
         component: EditInstalChauffageComponent
       },
@@ -177,12 +189,20 @@ import { EclairageDetailsComponent } from './components/eclairage-details/eclair
         component: EditInstalEclairageComponent
       },
       {
+        path: 'SpringDomina/installations/ChauffeEau/edit/:id',
+        component: EditInstalChauffeEauComponent
+      },
+      {
         path: 'SpringDomina/installations/Chauffages/:id',
         component: ChauffageDetailsComponent
       },
       {
         path: 'SpringDomina/installations/Eclairages/:id',
         component: EclairageDetailsComponent
+      },
+      {
+        path: 'SpringDomina/installations/ChauffeEau/:id',
+        component: ChauffeEauDetailsComponent
       },
       {
         path: '',

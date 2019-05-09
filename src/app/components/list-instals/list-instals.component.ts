@@ -43,6 +43,14 @@ export class ListInstalsComponent implements OnInit {
     this.router.navigateByUrl('/SpringDomina/installations/Eclairages/edit');
   }
 
+  listInstalChauffeEauClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/ChauffeEau');
+  }
+
+  addInstalChauffeEauClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/ChauffeEau/edit');
+  }
+
 
   public getAllInstals(): void {
     this.instalService.getAllInstallation().subscribe((response) => {
