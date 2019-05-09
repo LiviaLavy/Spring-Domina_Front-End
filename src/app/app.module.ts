@@ -53,6 +53,9 @@ import { ListChauffeEauSummaryComponent } from './components/list-chauffe-eau-su
 import { VmcDetailsComponent } from './components/vmc-details/vmc-details.component';
 import { EditInstalVmcComponent } from './components/edit-instal-vmc/edit-instal-vmc.component';
 import { ListVmcSummaryComponent } from './components/list-vmc-summary/list-vmc-summary.component';
+import { VoletDetailsComponent } from './components/volet-details/volet-details.component';
+import { EditInstalVoletComponent } from './components/edit-instal-volet/edit-instal-volet.component';
+import { ListVoletsSummaryComponent } from './components/list-volets-summary/list-volets-summary.component';
 
 
 
@@ -89,7 +92,10 @@ import { ListVmcSummaryComponent } from './components/list-vmc-summary/list-vmc-
     ListChauffeEauSummaryComponent,
     VmcDetailsComponent,
     EditInstalVmcComponent,
-    ListVmcSummaryComponent
+    ListVmcSummaryComponent,
+    VoletDetailsComponent,
+    EditInstalVoletComponent,
+    ListVoletsSummaryComponent
 
   ],
   imports: [
@@ -189,6 +195,10 @@ import { ListVmcSummaryComponent } from './components/list-vmc-summary/list-vmc-
         component: EditInstalVmcComponent
       },
       {
+        path: 'SpringDomina/installations/Volets/edit',
+        component: EditInstalVoletComponent
+      },
+      {
         path: 'SpringDomina/installations/Chauffages/edit/:id',
         component: EditInstalChauffageComponent
       },
@@ -205,6 +215,10 @@ import { ListVmcSummaryComponent } from './components/list-vmc-summary/list-vmc-
         component: EditInstalVmcComponent
       },
       {
+        path: 'SpringDomina/installations/Volets/edit/:id',
+        component: EditInstalVoletComponent
+      },
+      {
         path: 'SpringDomina/installations/Chauffages/:id',
         component: ChauffageDetailsComponent
       },
@@ -219,6 +233,10 @@ import { ListVmcSummaryComponent } from './components/list-vmc-summary/list-vmc-
       {
         path: 'SpringDomina/installations/VMCs/:id',
         component: VmcDetailsComponent
+      },
+      {
+        path: 'SpringDomina/installations/Volets/:id',
+        component: VoletDetailsComponent
       },
       {
         path: '',

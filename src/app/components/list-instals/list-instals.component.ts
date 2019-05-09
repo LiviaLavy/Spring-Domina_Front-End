@@ -59,6 +59,14 @@ export class ListInstalsComponent implements OnInit {
     this.router.navigateByUrl('/SpringDomina/installations/VMCs/edit');
   }
 
+  listInstalVoletsClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Volets');
+  }
+
+  addInstalVoletsClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Volets/edit');
+  }
+
 
   public getAllInstals(): void {
     this.instalService.getAllInstallation().subscribe((response) => {
