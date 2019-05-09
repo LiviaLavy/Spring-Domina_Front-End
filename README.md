@@ -1,23 +1,23 @@
 # Spring Domina
 
-This application offers a platform where the users can manage their energetic consumation and improve their comfort, by handling connected electric installations. Users can create progs of control, or directly command their installations throught an interactive interface.
+This application offers a platform where the users can manage their energetic consummation and improve their comfort, by handling connected electric installations. Users can create progs of control, or directly command their installations through an interactive interface.
 
 The application's features are:
 
-- Manage connected installations using electricity, in addition of thermic, humidity, luminosity and CO2 captors.
-- Create and use programs for installation control for each rooms of the house.
-- Consult energetic consumation of each installation, room, and the house in general.
+- Manage connected installations using electricity, in addition to thermic, humidity, luminosity and CO2 captors.
+- Create and use programs for installation control for each room of the house.
+- Consult energetic consummation of each installation, room, and the house in general.
 
-This repository contain the Frontend part of the application.
+This repository contains the Frontend part of the application.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Getting Started
 ### Prerequisites
-To run this project you need the backend part of the application as requirement.
+To run this project you need the backend part of the application as a requirement.
 https://github.com/mgmtournie/Spring_domina
 
 ### Setting up
-To download the project, clone it from github using the next command:
+To download the project, clone it from GitHub using the next command:
 
 $ git clone https://github.com/LiviaLavy/Spring-Domina_Front-End.git
 
@@ -31,7 +31,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artefacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
@@ -40,6 +40,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+
+## Build With
+
 
 ## Further help
 
