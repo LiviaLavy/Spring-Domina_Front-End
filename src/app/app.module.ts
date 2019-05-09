@@ -43,6 +43,10 @@ import {CheckboxModule} from 'primeng/checkbox';
 import { TopPartComponent } from './components/top-part/top-part.component';
 import {ToolbarModule} from 'primeng/toolbar';
 import {RatingModule} from 'primeng/rating';
+import { ListProgsComponent } from './components/list-progs/list-progs.component';
+import { EditInstalEclairageComponent } from './components/edit-instal-eclairage/edit-instal-eclairage.component';
+import { ListEclairagesSummaryComponent } from './components/list-eclairages-summary/list-eclairages-summary.component';
+import { EclairageDetailsComponent } from './components/eclairage-details/eclairage-details.component';
 
 
 
@@ -69,7 +73,11 @@ import {RatingModule} from 'primeng/rating';
     ListChauffagesSummaryComponent,
     ChauffageDetailsComponent,
     SummaryPieceComponent,
-    TopPartComponent
+    TopPartComponent,
+    ListProgsComponent,
+    EditInstalEclairageComponent,
+    ListEclairagesSummaryComponent,
+    EclairageDetailsComponent
 
   ],
   imports: [
@@ -116,6 +124,10 @@ import {RatingModule} from 'primeng/rating';
         component: ListConsosComponent
       },
       {
+        path: 'SpringDomina/programmes',
+        component: ListProgsComponent
+      },
+      {
         path: 'SpringDomina/pieces/details/:idPiece',
         component: DetailPieceComponent
       },
@@ -153,12 +165,24 @@ import {RatingModule} from 'primeng/rating';
         component: EditInstalChauffageComponent
       },
       {
+        path: 'SpringDomina/installations/Eclairages/edit',
+        component: EditInstalEclairageComponent
+      },
+      {
         path: 'SpringDomina/installations/Chauffages/edit/:id',
         component: EditInstalChauffageComponent
       },
       {
+        path: 'SpringDomina/installations/Eclairages/edit/:id',
+        component: EditInstalEclairageComponent
+      },
+      {
         path: 'SpringDomina/installations/Chauffages/:id',
         component: ChauffageDetailsComponent
+      },
+      {
+        path: 'SpringDomina/installations/Eclairages/:id',
+        component: EclairageDetailsComponent
       },
       {
         path: '',

@@ -35,30 +35,14 @@ export class ListInstalsComponent implements OnInit {
     this.router.navigateByUrl('/SpringDomina/installations/Chauffages/edit');
   }
 
+  listInstalEclairagesClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Eclairages');
+  }
 
-  // public addInstalChauffeEauClicked() {
-  //   console.log(JSON.stringify(this.instal_in_progress, null, 2));
-  //   this.installations.unshift(this.instal_in_progress);
-  //   this.instal_in_progress = InstalChauffeEau.createBlank();
-  // }
+  addInstalEclairagesClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Eclairages/edit');
+  }
 
-  // public addInstalEclairageClicked() {
-  //   console.log(JSON.stringify(this.instal_in_progress, null, 2));
-  //   this.installations.unshift(this.instal_in_progress);
-  //   this.instal_in_progress = InstalEclairage.createBlank();
-  // }
-
-  // public addInstalVoletClicked() {
-  //   console.log(JSON.stringify(this.instal_in_progress, null, 2));
-  //   this.installations.unshift(this.instal_in_progress);
-  //   this.instal_in_progress = InstalVolet.createBlank();
-  // }
-
-  // public addInstalVMCClicked() {
-  //   console.log(JSON.stringify(this.instal_in_progress, null, 2));
-  //   this.installations.unshift(this.instal_in_progress);
-  //   this.instal_in_progress = InstalVMC.createBlank();
-  // }
 
   public getAllInstals(): void {
     this.instalService.getAllInstallation().subscribe((response) => {
