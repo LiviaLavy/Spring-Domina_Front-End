@@ -1,5 +1,6 @@
 <div class="p-col"><button pButton type="button" label="Ajouter une Pièce" class="ui-button-raised ui-button-info"
   (click)="addNewPiecePressed()"></button></div>
+
   
   <app-summary-piece *ngFor="let piece of pieces" [piece]="piece" (userClick)="userClickedOnPiece($event)">
 

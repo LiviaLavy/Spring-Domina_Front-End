@@ -20,10 +20,9 @@ export class ListInstalChauffageComponent implements OnInit {
   ngOnInit(): InstalChauffage[] {
 
     this.instalService.getAllInstallationChauffage().subscribe((response) => {
-      console.log(response['_body'] );
       this.instalChauffages = response;
     });
-    if (!this.instalChauffages){
+    if (!this.instalChauffages) {
     return this.instalChauffages;
     } else {
       console.log('pas de chauffage ajouté');
@@ -32,6 +31,10 @@ export class ListInstalChauffageComponent implements OnInit {
 
   userClickedOnView(id): void {
     this.router.navigateByUrl('SpringDomina/installations/Chauffages/' + id);
+  }
+
+  addInstalChauffagesClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Chauffages/edit');
   }
 
   goBackButtonPressed(): void {

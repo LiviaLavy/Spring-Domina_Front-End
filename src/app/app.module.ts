@@ -38,6 +38,13 @@ import { ChauffageDetailsComponent } from './components/chauffage-details/chauff
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {ListboxModule} from 'primeng/listbox';
 import {DropdownModule} from 'primeng/dropdown';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {CheckboxModule} from 'primeng/checkbox';
+import { TopPartComponent } from './components/top-part/top-part.component';
+import {ToolbarModule} from 'primeng/toolbar';
+import {RatingModule} from 'primeng/rating';
+
+
 
 
 @NgModule({
@@ -61,11 +68,13 @@ import {DropdownModule} from 'primeng/dropdown';
     EditInstalChauffageComponent,
     ListChauffagesSummaryComponent,
     ChauffageDetailsComponent,
-    SummaryPieceComponent
+    SummaryPieceComponent,
+    TopPartComponent
 
   ],
   imports: [
     CommonModule,
+    ToolbarModule,
     AppRoutingModule,
     CardModule,
     ButtonModule,
@@ -81,6 +90,10 @@ import {DropdownModule} from 'primeng/dropdown';
     TabViewModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    DropdownModule,
+    MultiSelectModule,
+    CheckboxModule,
+    RatingModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {

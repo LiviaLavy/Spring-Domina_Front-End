@@ -1,7 +1,5 @@
-<div>
-
-<p><button pButton type="button" label="Retour" style="position: right" class="ui-button-warning" (click)="goBackButtonPressed()"></button></p>
-
-</div>
+<button pButton type="button" label="Retour" class="ui-button-warning" (click)="goBackButtonPressed()"></button>
 
 <app-list-chauffages-summary *ngFor="let instalChauffage of instalChauffages" [instalChauffage]="instalChauffage" (userClick)="userClickedOnView($event)"></app-list-chauffages-summary>
+
+<button pButton type="button" icon="pi pi-plus"  label="New" class="ui-button-info" style="left: 50%" (click)="addInstalChauffagesClicked()"></button>

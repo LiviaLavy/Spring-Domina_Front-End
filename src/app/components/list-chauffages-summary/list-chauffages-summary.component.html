@@ -6,7 +6,8 @@
         </div>
     </p-header>
    
-    <p>Localisation : {{ instalChauffage.piece }}</p>
+    <p>Localisation : {{ instalChauffage.piece.nomPiece }}</p>
+    <p-inputSwitch disabled [(ngModel)]="instalChauffage.etat" ></p-inputSwitch>
 
     <p-footer>
         <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success" (click)="userClickedOnView()" ></button>

@@ -9,7 +9,7 @@ export class Installation {
     dateAjout: string;
     etat: boolean;
     piece: Piece;
-    programmes: Programme[];
+    programmes: Programme[] = [];
 
     constructor(id: number, t: string, dAj: string, etat: boolean, piece: Piece,
                 progs: Programme[]) {
