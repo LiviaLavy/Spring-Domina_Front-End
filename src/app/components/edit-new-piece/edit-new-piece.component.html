@@ -24,14 +24,9 @@
 <div>
   <p-fieldset>
     <p-header> Installations de la pièce</p-header>
-    <div class="installation" *ngFor="let installation of pieceInProgress.installations, let i = index">
-      <input type="text" pInputText [(ngModel)]="pieceInProgress.installations[i].type" />
-      <br>
-      <input type="text" pInputText [(ngModel)]="pieceInProgress.installations[i].id" />
-      <button pButton type="button" label="Modifier" class="ui-button-raised ui-button-info"
-        (click)="userClickedOnView()"></button>
-    </div>
-
+    <p-dropdown [options]="instals" [(ngModel)]="pieceInProgress.installations" 
+      placeholder="Choisissez une installation" optionLabel="type" [showClear]="true"></p-dropdown>
+    <br>
   </p-fieldset>
 </div>
 

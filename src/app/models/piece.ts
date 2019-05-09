@@ -25,7 +25,7 @@ export class Piece {
         this.consommation = co;
     }
     public static createBlank() {
-        return new Piece(null, '', 1, [], [], [], null);
+        return new Piece(-1, '', 1, [], [], [], null);
     }
     public static pieceFromJSON(obj: any): Piece {
         return new Piece(obj.idPiece, obj.nomPiece, obj.superficieM2,

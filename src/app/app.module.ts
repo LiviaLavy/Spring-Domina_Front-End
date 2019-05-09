@@ -37,6 +37,8 @@ import {FieldsetModule} from 'primeng/fieldset';
 import { ChauffageDetailsComponent } from './components/chauffage-details/chauffage-details.component';
 import {InputSwitchModule} from 'primeng/inputswitch';
 import {ListboxModule} from 'primeng/listbox';
+import {DropdownModule} from 'primeng/dropdown';
+
 
 @NgModule({
   declarations: [
@@ -72,6 +74,7 @@ import {ListboxModule} from 'primeng/listbox';
     InputSwitchModule,
     ListboxModule,
     FormsModule,
+    DropdownModule,
     SliderModule,
     BrowserModule,
     PanelModule,
