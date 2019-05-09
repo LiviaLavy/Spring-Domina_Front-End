@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Piece } from '../models/piece';
+import { Piece, PieceInstallationDto } from '../models/piece';
+import { Installation } from '../models/installation';
 
 
 const ADRESSE_SERVER = 'http://localhost:8080';
@@ -9,7 +10,7 @@ const ADRESSE_SERVER = 'http://localhost:8080';
   providedIn: 'root'
 })
 export class PieceServiceService {
-
+  
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -31,16 +32,20 @@ export class PieceServiceService {
 
   public createPiece(piece: Piece): Observable<any> {
     return this.http.post<Piece>(ADRESSE_SERVER + '/piece/addPiece',
-    JSON.stringify(piece), this.httpOptions);
+      JSON.stringify(piece), this.httpOptions);
   }
 
-  public updatePiece(piece: Piece): Observable<any> {
-    return this.http.put<Piece>(ADRESSE_SERVER + '/piece/' + piece.idPiece,
-    JSON.stringify(piece), this.httpOptions);
+  public updatePiece(incomingRequestBody: PieceInstallationDto): Observable<any> {
+    return this.http.put<Piece>(ADRESSE_SERVER + '/piece/' + incomingRequestBody.piece.idPiece,
+      JSON.stringify(incomingRequestBody), this.httpOptions);
   }
 
   public deletePiece(piece: Piece): Observable<any> {
     return this.http.delete<Piece>(ADRESSE_SERVER + '/piece/' + piece.idPiece,
-    this.httpOptions);
+      this.httpOptions);
   }
 }
+
+
+
+

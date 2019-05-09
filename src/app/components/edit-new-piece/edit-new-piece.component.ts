@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Piece } from '../../models/piece';
+import { Piece, PieceInstallationDto } from '../../models/piece';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { PieceServiceService } from '../../services/piece-service.service';
 import { Programme } from '../../models/programme';
@@ -14,6 +14,7 @@ import { Installation } from 'src/app/models/installation';
   styleUrls: ['./edit-new-piece.component.css']
 })
 export class EditNewPieceComponent implements OnInit {
+  incomingRequestBody: PieceInstallationDto;
   instals: Installation[];
   modeAccess: string;
   pieceInProgress: Piece;
@@ -25,7 +26,6 @@ export class EditNewPieceComponent implements OnInit {
     this.instalService.getAllInstallation().subscribe((response) => {
       this.instals = response;
       this.instalsID = this.stringifyIDFromInstallation(this.instals);
-
     });
 
   }
@@ -70,17 +70,19 @@ export class EditNewPieceComponent implements OnInit {
         this.pieceService.getPieceById(parseInt(params.get('idPiece'), 10)).subscribe(
           (responses) => {
             this.pieceInProgress = responses;
+            console.log('Instals.getAll -----------');
             console.log(this.instals);
+            console.log(' piece in progress -----------');
             console.log(this.pieceInProgress);
             this.instalService.getInstallationByPiece(parseInt(params.get('idPiece'), 10)).subscribe(
               (responseb) => {
                 this.pieceInProgress.installations = responseb;
                 this.selectedInstbyId = this.stringifyIDFromInstallation(this.pieceInProgress.installations);
-                console.log('eeee');
+                console.log('pieceInProgress.installations -----------');
                 console.log(this.pieceInProgress.installations);
-                console.log(this.instals);
+                console.log(' instalsID -----------');
                 console.log(this.instalsID);
-                console.log('robert');
+                console.log('selectedInstbyId avt  -----------');
                 console.log(this.selectedInstbyId);
               }
             );
@@ -94,17 +96,14 @@ export class EditNewPieceComponent implements OnInit {
       }
     });
   }
-  public updatePiece(piece: Piece): void {
-    this.pieceInProgress.installations = this.getInstallsByTypes(this.selectedInstbyId);
-    this.pieceService.updatePiece(this.pieceInProgress).subscribe(
+  public updatePiece(incomingRequestBody: PieceInstallationDto): void {
+
+    this.pieceService.updatePiece(this.incomingRequestBody).subscribe(
       (response) => {
         this.router.navigateByUrl('SpringDomina/pieces');
-        console.log('rrrr');
-        console.log(this.pieceInProgress.installations);
-        console.log('iii');
-        console.log(this.getInstallsByTypes(this.selectedInstbyId));
       }
     );
+
   }
 
   public addPiece(piece: Piece): void {
@@ -114,9 +113,19 @@ export class EditNewPieceComponent implements OnInit {
       }
     );
   }
-  public addUpdateRecipeClicked(): void {
+  public addUpdatePieceClicked(): void {
     if (this.modeAccess === 'MODIFICATION') {
-      this.updatePiece(this.pieceInProgress);
+      console.log('-------------------------------------------------');
+      console.log(this.pieceInProgress);
+      console.log('++++++++++++++++++++++++++++++++++++++++++++++++++');
+
+      console.log(this.pieceInProgress.installations);
+      this.pieceInProgress.installations = this.getInstallsByTypes(this.selectedInstbyId);
+
+      this.incomingRequestBody = new PieceInstallationDto(this.pieceInProgress, this.pieceInProgress.installations);
+     
+      console.log(this.incomingRequestBody);
+      this.updatePiece(this.incomingRequestBody);
     } else {
       this.addPiece(this.pieceInProgress);
     }

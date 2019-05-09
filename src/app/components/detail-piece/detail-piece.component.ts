@@ -15,7 +15,7 @@ import { Installation } from '../../models/installation';
 export class DetailPieceComponent implements OnInit {
   piece: Piece;
   pieces: Piece[];
-  instals: Installation[];
+  instals: Installation[] = [];
   constructor(private route: ActivatedRoute,
               private location: Location,
               private router: Router,
