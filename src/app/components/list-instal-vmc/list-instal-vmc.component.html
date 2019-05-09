@@ -1,3 +1,7 @@
-<p>
-  list-instal-vmc works!
-</p>
+<button pButton type="button" label="Retour" class="ui-button-warning" (click)="goBackButtonPressed()"></button>
+
+<app-list-vmc-summary *ngFor="let instalVMC of instalVMCs" [instalVMC]="instalVMC" (userClick)="userClickedOnView($event)"></app-list-vmc-summary>
+
+<button pButton type="button" icon="pi pi-plus"  label="New" class="ui-button-info" style="left: 50%" (click)="addInstalVMCsClicked()"></button>
+
+<app-bottom-part></app-bottom-part>
