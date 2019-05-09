@@ -24,11 +24,14 @@
 <div>
   <p-fieldset>
     <p-header> Installations de la pièce</p-header>
-    <div class="installation" *ngFor="let ins of instals, let i = index">
-        <div class="ui-g" style="width:250px;margin-bottom:10px">
-            <div class="ui-g-12"><p-checkbox name="installation" value={{ins.id}} label= {{ins.id}} [(ngModel)]="selectedInstbyId" inputId="{{ins.id}}"></p-checkbox></div>
-            
+    <div class="installation" *ngFor="let ins of instalsID, let i = index">
+      <div class="ui-g" style="width:250px;margin-bottom:10px">
+        <div class="ui-g-12">
+          <p-checkbox name="installation" value={{instalsID[i]}} label={{instalsID[i]}} [(ngModel)]="selectedInstbyId"
+            inputId={{instalsID[i]}}></p-checkbox>
         </div>
+
+      </div>
     </div>
 
   </p-fieldset>
