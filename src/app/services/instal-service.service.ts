@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Installation, InstalChauffage, InstalChauffeEau, InstalVMC, InstalVolet } from '../models/installation';
+import { Installation, InstalChauffage, InstalChauffeEau, InstalVMC, InstalVolet, InstalEclairage } from '../models/installation';
 
 
 const ADRESSE_SERVER = 'http://localhost:8080';
@@ -114,34 +114,34 @@ export class InstalServiceService {
   }
   // Installations Eclairage
   public getAllInstallationEclairage(): Observable<any> {
-    return this.http.get<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/all');
+    return this.http.get<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/all');
   }
   public getInstallationEclairageByID(id: number): Observable<any> {
-    return this.http.get<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/ID/' + id);
+    return this.http.get<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/ID/' + id);
   }
   public getInstallationEclairageByEtat(etat: string): Observable<any> {
-    return this.http.get<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/etat/' + etat);
+    return this.http.get<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/etat/' + etat);
   }
   public getInstallationEclairageByPiece(idpiece: string): Observable<any> {
-    return this.http.get<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/piece/' + idpiece);
+    return this.http.get<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/piece/' + idpiece);
   }
   public getInstallationEclairageByProgramme(idprog: string): Observable<any> {
-    return this.http.get<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/IDProg/' + idprog);
+    return this.http.get<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/IDProg/' + idprog);
   }
-  public putInstallationEclairageActive(installation: InstalChauffeEau): Observable<any> {
-    return this.http.put<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/actived/' + installation.id,
+  public putInstallationEclairageActive(installation: InstalEclairage): Observable<any> {
+    return this.http.put<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/actived/' + installation.id,
       JSON.stringify(installation), this.httpOptions);
   }
-  public createInstallationEclairage(installation: InstalChauffeEau): Observable<any> {
-    return this.http.post<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/add',
+  public createInstallationEclairage(installation: InstalEclairage): Observable<any> {
+    return this.http.post<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/add',
       JSON.stringify(installation), this.httpOptions);
   }
-  public updateInstallationEclairage(installation: InstalChauffeEau): Observable<any> {
-    return this.http.put<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/' + installation.id,
+  public updateInstallationEclairage(installation: InstalEclairage): Observable<any> {
+    return this.http.put<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/' + installation.id,
       JSON.stringify(installation), this.httpOptions);
   }
-  public deleteInstallationEclairage(installation: InstalChauffeEau): Observable<any> {
-    return this.http.delete<InstalChauffeEau>(ADRESSE_SERVER + '/instal/Eclairage/' + installation.id,
+  public deleteInstallationEclairage(installation: InstalEclairage): Observable<any> {
+    return this.http.delete<InstalEclairage>(ADRESSE_SERVER + '/instal/Eclairage/' + installation.id,
       this.httpOptions);
   }
 

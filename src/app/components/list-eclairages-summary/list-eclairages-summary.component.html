@@ -1,0 +1,16 @@
+<p-panel>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Eclairage ID : {{ instalEclairage.id }}</span>
+            <button pButton style = "float: right" label="Edit" icon="pi pi-check" (click)="userClickedOnEditEclairage()"></button>
+        </div>
+    </p-header>
+   
+    <p>Localisation : {{ instalEclairage.piece.nomPiece }}</p>
+    <p-inputSwitch disabled [(ngModel)]="instalEclairage.etat" ></p-inputSwitch>
+
+    <p-footer>
+        <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success" (click)="userClickedOnView()" ></button>
+        <button pButton type="button" label="Delete" icon="pi pi-times" class="ui-button-secondary" (click)="userClickedOnDeleteEclairage()"></button>
+    </p-footer>
+</p-panel>

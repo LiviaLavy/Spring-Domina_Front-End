@@ -1,0 +1,17 @@
+<p-panel>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Volet ID : 
+                {{ instalVolet.id }}</span>
+            <button pButton style = "float: right" label="Edit" icon="pi pi-check" (click)="userClickedOnEditVolet()"></button>
+        </div>
+    </p-header>
+   
+    <p>Localisation : {{ instalVolet.piece.nomPiece }}</p>
+    <p-inputSwitch disabled [(ngModel)]="instalVolet.etat" ></p-inputSwitch>
+
+    <p-footer>
+        <button pButton type="button" icon="pi pi-search" label="View" class="ui-button-success" (click)="userClickedOnView()" ></button>
+        <button pButton type="button" label="Delete" icon="pi pi-times" class="ui-button-secondary" (click)="userClickedOnDeleteVolet()"></button>
+    </p-footer>
+</p-panel>

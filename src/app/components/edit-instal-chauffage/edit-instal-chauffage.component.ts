@@ -85,15 +85,3 @@ export class EditInstalChauffageComponent implements OnInit {
     this.location.back();
   }
   }
-
-
-
-
-
-
-
-
-
-
-
-

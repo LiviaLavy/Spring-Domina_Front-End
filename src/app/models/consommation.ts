@@ -37,13 +37,13 @@ export class ConsommationChauffage extends Consommation {
 
 export class ConsommationEau extends Consommation {
     consommation: Consommation;
-    ConsM3Jour: number;
-    ConsM3Mois: number;
-    ConsM3An: number;
+    consM3Jour: number;
+    consM3Mois: number;
+    consM3An: number;
 }
 
 export class ConsommationElec extends Consommation {
-    ConsKWhJour: number;
-    ConsKWhMois: number;
-    ConsKWhAn: number;
+    consKWhJour: number;
+    consKWhMois: number;
+    consKWhAn: number;
 }

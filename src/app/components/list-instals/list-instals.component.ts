@@ -35,30 +35,38 @@ export class ListInstalsComponent implements OnInit {
     this.router.navigateByUrl('/SpringDomina/installations/Chauffages/edit');
   }
 
+  listInstalEclairagesClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Eclairages');
+  }
 
-  // public addInstalChauffeEauClicked() {
-  //   console.log(JSON.stringify(this.instal_in_progress, null, 2));
-  //   this.installations.unshift(this.instal_in_progress);
-  //   this.instal_in_progress = InstalChauffeEau.createBlank();
-  // }
+  addInstalEclairagesClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Eclairages/edit');
+  }
 
-  // public addInstalEclairageClicked() {
-  //   console.log(JSON.stringify(this.instal_in_progress, null, 2));
-  //   this.installations.unshift(this.instal_in_progress);
-  //   this.instal_in_progress = InstalEclairage.createBlank();
-  // }
+  listInstalChauffeEauClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/ChauffeEau');
+  }
 
-  // public addInstalVoletClicked() {
-  //   console.log(JSON.stringify(this.instal_in_progress, null, 2));
-  //   this.installations.unshift(this.instal_in_progress);
-  //   this.instal_in_progress = InstalVolet.createBlank();
-  // }
+  addInstalChauffeEauClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/ChauffeEau/edit');
+  }
 
-  // public addInstalVMCClicked() {
-  //   console.log(JSON.stringify(this.instal_in_progress, null, 2));
-  //   this.installations.unshift(this.instal_in_progress);
-  //   this.instal_in_progress = InstalVMC.createBlank();
-  // }
+  listInstalVMCsClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/VMCs');
+  }
+
+  addInstalVMCsClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/VMCs/edit');
+  }
+
+  listInstalVoletsClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Volets');
+  }
+
+  addInstalVoletsClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/installations/Volets/edit');
+  }
+
 
   public getAllInstals(): void {
     this.instalService.getAllInstallation().subscribe((response) => {

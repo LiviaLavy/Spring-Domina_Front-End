@@ -28,4 +28,8 @@ export class AccueilComponent implements OnInit {
   listConsosClicked(): void {
     this.router.navigateByUrl('/SpringDomina/consommations');
   }
+
+  listProgrammesClicked(): void {
+    this.router.navigateByUrl('/SpringDomina/programmes');
+  }
 }

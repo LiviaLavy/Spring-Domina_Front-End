@@ -1,3 +1,7 @@
-<p>
-  list-instal-chauffe-eau works!
-</p>
+<button pButton type="button" label="Retour" class="ui-button-warning" (click)="goBackButtonPressed()"></button>
+
+<app-list-chauffe-eau-summary *ngFor="let instalChauffeEau of instalChauffeEaux" [instalChauffeEau]="instalChauffeEau" (userClick)="userClickedOnView($event)"></app-list-chauffe-eau-summary>
+
+<button pButton type="button" icon="pi pi-plus"  label="New" class="ui-button-info" style="left: 50%" (click)="addInstalChauffeEauClicked()"></button>
+
+<app-bottom-part></app-bottom-part>

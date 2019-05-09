@@ -1,0 +1,45 @@
+<button pButton type="button" label="Retour"  class="ui-button-warning"
+    (click)="goBackButtonPressed()"></button>
+
+<p-panel>
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Edition
+                Eclairage</span>
+
+        </div>
+    </p-header>
+
+    <p-fieldset legend="Date d'ajout">
+
+        <span class="ui-float-label">
+            <input class="form-control" [(ngModel)]="instalEclairage_in_progress.dateAjout" id="float-input" type="text"
+                size="30" pInputText>
+            <label for="float-input">dd/mm/yyyy</label>
+        </span>
+
+    </p-fieldset>
+
+    <p-fieldset legend="Etat d'activation">
+        <h3 class="first">{{instalEclairage_in_progress.etat}}</h3>
+        <p-inputSwitch [(ngModel)]="instalEclairage_in_progress.etat"></p-inputSwitch>
+    </p-fieldset>
+
+    <p-fieldset legend="Localisation">
+        <p-dropdown [options]="pieces" [(ngModel)]="instalEclairage_in_progress.piece"
+            placeholder="Choisissez une localisation" optionLabel="nomPiece" [showClear]="true"></p-dropdown>
+    </p-fieldset>
+
+    <p-fieldset legend="Intensite">
+        <h3 class="first"> {{ instalEclairage_in_progress.intensite }} %</h3>
+        <p-slider [(ngModel)]="instalEclairage_in_progress.intensite" class="form-control" [style]="{'width':'14em'}">
+        </p-slider>
+    </p-fieldset>
+
+    <p-footer>
+        <button pButton type="button" label="Save" icon="pi pi-check" class="ui-button-success"
+            (click)="addUpdateInstalEclairageClicked()"></button>     
+        <button pButton type="button" label="Delete" icon="pi pi-times" class="ui-button-secondary" (click)="userClickedOnDeleteEclairage()"></button>       
+    </p-footer>
+
+</p-panel>

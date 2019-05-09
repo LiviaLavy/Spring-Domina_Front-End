@@ -43,6 +43,19 @@ import {CheckboxModule} from 'primeng/checkbox';
 import { TopPartComponent } from './components/top-part/top-part.component';
 import {ToolbarModule} from 'primeng/toolbar';
 import {RatingModule} from 'primeng/rating';
+import { ListProgsComponent } from './components/list-progs/list-progs.component';
+import { EditInstalEclairageComponent } from './components/edit-instal-eclairage/edit-instal-eclairage.component';
+import { ListEclairagesSummaryComponent } from './components/list-eclairages-summary/list-eclairages-summary.component';
+import { EclairageDetailsComponent } from './components/eclairage-details/eclairage-details.component';
+import { ChauffeEauDetailsComponent } from './components/chauffe-eau-details/chauffe-eau-details.component';
+import { EditInstalChauffeEauComponent } from './components/edit-instal-chauffe-eau/edit-instal-chauffe-eau.component';
+import { ListChauffeEauSummaryComponent } from './components/list-chauffe-eau-summary/list-chauffe-eau-summary.component';
+import { VmcDetailsComponent } from './components/vmc-details/vmc-details.component';
+import { EditInstalVmcComponent } from './components/edit-instal-vmc/edit-instal-vmc.component';
+import { ListVmcSummaryComponent } from './components/list-vmc-summary/list-vmc-summary.component';
+import { VoletDetailsComponent } from './components/volet-details/volet-details.component';
+import { EditInstalVoletComponent } from './components/edit-instal-volet/edit-instal-volet.component';
+import { ListVoletsSummaryComponent } from './components/list-volets-summary/list-volets-summary.component';
 
 
 
@@ -69,7 +82,20 @@ import {RatingModule} from 'primeng/rating';
     ListChauffagesSummaryComponent,
     ChauffageDetailsComponent,
     SummaryPieceComponent,
-    TopPartComponent
+    TopPartComponent,
+    ListProgsComponent,
+    EditInstalEclairageComponent,
+    ListEclairagesSummaryComponent,
+    EclairageDetailsComponent,
+    ChauffeEauDetailsComponent,
+    EditInstalChauffeEauComponent,
+    ListChauffeEauSummaryComponent,
+    VmcDetailsComponent,
+    EditInstalVmcComponent,
+    ListVmcSummaryComponent,
+    VoletDetailsComponent,
+    EditInstalVoletComponent,
+    ListVoletsSummaryComponent
 
   ],
   imports: [
@@ -117,6 +143,10 @@ import {RatingModule} from 'primeng/rating';
         component: ListConsosComponent
       },
       {
+        path: 'SpringDomina/programmes',
+        component: ListProgsComponent
+      },
+      {
         path: 'SpringDomina/pieces/details/:idPiece',
         component: DetailPieceComponent
       },
@@ -154,12 +184,60 @@ import {RatingModule} from 'primeng/rating';
         component: EditInstalChauffageComponent
       },
       {
+        path: 'SpringDomina/installations/ChauffeEau/edit',
+        component: EditInstalChauffeEauComponent
+      },
+      {
+        path: 'SpringDomina/installations/Eclairages/edit',
+        component: EditInstalEclairageComponent
+      },
+      {
+        path: 'SpringDomina/installations/VMCs/edit',
+        component: EditInstalVmcComponent
+      },
+      {
+        path: 'SpringDomina/installations/Volets/edit',
+        component: EditInstalVoletComponent
+      },
+      {
         path: 'SpringDomina/installations/Chauffages/edit/:id',
         component: EditInstalChauffageComponent
       },
       {
+        path: 'SpringDomina/installations/ChauffeEau/edit/:id',
+        component: EditInstalChauffeEauComponent
+      },
+      {
+        path: 'SpringDomina/installations/Eclairages/edit/:id',
+        component: EditInstalEclairageComponent
+      },
+      {
+        path: 'SpringDomina/installations/VMCs/edit/:id',
+        component: EditInstalVmcComponent
+      },
+      {
+        path: 'SpringDomina/installations/Volets/edit/:id',
+        component: EditInstalVoletComponent
+      },
+      {
         path: 'SpringDomina/installations/Chauffages/:id',
         component: ChauffageDetailsComponent
+      },
+      {
+        path: 'SpringDomina/installations/ChauffeEau/:id',
+        component: ChauffeEauDetailsComponent
+      },
+      {
+        path: 'SpringDomina/installations/Eclairages/:id',
+        component: EclairageDetailsComponent
+      },
+      {
+        path: 'SpringDomina/installations/VMCs/:id',
+        component: VmcDetailsComponent
+      },
+      {
+        path: 'SpringDomina/installations/Volets/:id',
+        component: VoletDetailsComponent
       },
       {
         path: '',

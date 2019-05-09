@@ -1,0 +1,57 @@
+<button pButton type="button" label="Retour"  class="ui-button-warning" (click)="goBackButtonPressed()"></button>
+
+<p-panel>
+  <p-header>
+      <div class="ui-helper-clearfix">
+          <span class="ui-panel-title" style="font-size:16px;display:inline-block;margin-top:2px">Chauffe-Eau ID : {{ instalChauffeEau_in_progress.id }}</span>
+          <button pButton style = "float: right" label="Edit" icon="pi pi-check" (click)="userClickedOnEditChauffeEau()" ></button>
+      </div>
+  </p-header>
+
+  <p-fieldset legend="Date d'ajout">
+        <h5 class="first">{{ instalChauffeEau_in_progress.dateAjout }}</h5>
+  </p-fieldset>
+
+  <p-fieldset legend="Etat">
+        <p-inputSwitch disabled [(ngModel)]="instalChauffeEau_in_progress.etat" ></p-inputSwitch>
+  </p-fieldset>
+
+  <p-fieldset legend="Localisation">
+        <h5 class="first">{{ instalChauffeEau_in_progress.piece.nomPiece}}</h5>
+  </p-fieldset>
+
+  <p-fieldset legend="Puissance">
+        <h5 class="first"> {{ instalChauffeEau_in_progress.puissance }} %</h5>
+        
+  </p-fieldset>
+
+  <p-fieldset legend="Consommation">
+    <li><h4>Consommation Electrique</h4>
+        <h5>Fournisseur : {{ instalChauffeEau_in_progress.consoElec.fournisseur }}</h5>
+        <h5>{{ instalChauffeEau_in_progress.consoElec.consKWhJour }} KWh/jour</h5>
+        <h5>{{ instalChauffeEau_in_progress.consoElec.consKWhMois }} KWh/mois</h5>
+        <h5>{{ instalChauffeEau_in_progress.consoElec.consKWhAn }} KWh/an</h5> 
+      </li>  
+
+      <li><h4>Consommation Eau</h4>
+        <h5>Fournisseur : {{ instalChauffeEau_in_progress.consoEau.fournisseur }}</h5>
+        <h5>{{ instalChauffeEau_in_progress.consoEau.consM3Jour }} m3/jour</h5>
+        <h5>{{ instalChauffeEau_in_progress.consoEau.consM3Mois }} m3/mois</h5>
+        <h5>{{ instalChauffeEau_in_progress.consoEau.consM3An }} m3/an</h5> 
+      </li>  
+    </p-fieldset>
+  
+  <p-fieldset legend="Programmes associés" [toggleable]="true">
+      <ul>
+          <li *ngFor="let programme of instalChauffeEau_in_progress.programmes">
+              <p>ID : {{ programme.idProg }}, <b> {{ programme.nomProg }} </b></p>
+              <I> localisation : {{ programme.piece.nomPiece }}</I>
+          </li>
+        </ul>
+  </p-fieldset>   
+
+  <p-footer>
+      <button pButton type="button" label="Delete" icon="pi pi-times" class="ui-button-secondary" (click)="userClickedOnDeleteChauffeEau()"></button>
+  </p-footer>
+
+</p-panel>
