@@ -17,24 +17,26 @@ export class EditNewPieceComponent implements OnInit {
   instals: Installation[];
   modeAccess: string;
   pieceInProgress: Piece;
-  selectedInst: string[];
+  selectedInstbyId: number[];
+  instalsID: number[];
   // tslint:disable-next-line:max-line-length
   constructor(private router: Router, private route: ActivatedRoute, private location: Location, private pieceService: PieceServiceService, private instalService: InstalServiceService) {
     this.pieceInProgress = Piece.createBlank();
     this.instalService.getAllInstallation().subscribe((response) => {
       this.instals = response;
-
+      this.instalsID = this.stringifyIDFromInstallation(this.instals);
 
     });
+
   }
 
-  public getInstallsByTypes(types: string[]): Installation[] {
+  public getInstallsByTypes(types: number[]): Installation[] {
     let installs: Installation[];
     types.forEach(
       (currentType) => {
         this.instals.forEach(
           (currentInstals) => {
-            if (currentType === currentInstals.type) {
+            if (currentType === currentInstals.id) {
               installs.push(currentInstals);
             }
           }
@@ -46,14 +48,15 @@ export class EditNewPieceComponent implements OnInit {
   }
 
 
-  public stringifyTypeFromInstallation(inst: Installation[]) {
-    let instTypes: string[];
+  public stringifyIDFromInstallation(inst: Installation[]) {
+    let instalID: number[] = [];
     inst.forEach(
       (currentInst) => {
-        instTypes.push(currentInst.type);
+
+        instalID.push(currentInst.id);
       }
     );
-    return instTypes;
+    return instalID;
 
   }
 
@@ -70,9 +73,11 @@ export class EditNewPieceComponent implements OnInit {
             this.instalService.getInstallationByPiece(parseInt(params.get('idPiece'), 10)).subscribe(
               (responseb) => {
                 this.pieceInProgress.installations = responseb;
-                // this.selectedInst = this.stringifyTypeFromInstallation(this.pieceInProgress.installations);
-                console.log('eeee')
+                this.selectedInstbyId = this.stringifyIDFromInstallation(this.pieceInProgress.installations);
+                console.log('eeee');
                 console.log(this.pieceInProgress.installations);
+                console.log(this.instals);
+                console.log(this.instalsID);
               }
             );
           }
@@ -86,7 +91,7 @@ export class EditNewPieceComponent implements OnInit {
     });
   }
   public updatePiece(piece: Piece): void {
-    this.pieceInProgress.installations = this.getInstallsByTypes(this.selectedInst);
+    // this.pieceInProgress.installations = this.getInstallsByTypes(this.selectedInst);
     this.pieceService.updatePiece(this.pieceInProgress).subscribe(
       (response) => {
         this.router.navigateByUrl('SpringDomina/pieces');
